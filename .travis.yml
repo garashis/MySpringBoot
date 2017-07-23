@@ -1,9 +1,6 @@
 language: java
 jdk: oraclejdk8
 
-before_install:
-- rm -rf /home/travis/build/garashis/MySpringBoot/
-
 install: true
 script: mvn install
 
