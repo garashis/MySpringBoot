@@ -5,7 +5,7 @@ import org.springframework.vault.authentication.*;
 import org.springframework.vault.client.*;
 import org.springframework.vault.config.AbstractVaultConfiguration;
 
-@Configuration
+//@Configuration
 class AppConfig extends AbstractVaultConfiguration {
 
     @Override

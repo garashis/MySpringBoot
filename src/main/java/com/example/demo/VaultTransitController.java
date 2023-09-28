@@ -3,17 +3,15 @@ package com.example.demo;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.vault.core.VaultOperations;
+import org.springframework.vault.core.*;
 import org.springframework.vault.support.*;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
-
 @Slf4j
 //@RestController
-public class VaultController {
+public class VaultTransitController {
     @Autowired
-    private VaultOperations vaultOperations;
+    private VaultTransitOperations vaultTransitOperations;
 
     @GetMapping("/encryptWithVault/{data}")
     public String encrypt(@PathVariable String data) {
@@ -21,7 +19,7 @@ public class VaultController {
         String ciphertextOfData = null;
         try {
             Plaintext plaintext = Plaintext.of(data);
-            Ciphertext ciphertext = vaultOperations.opsForTransit().encrypt("sample-key", plaintext);
+            Ciphertext ciphertext = vaultTransitOperations.encrypt("sample-key", plaintext);
             ciphertextOfData = ciphertext.getCiphertext();
             log.info("Finished encrypt");
         } catch (Exception e) {
@@ -39,7 +37,7 @@ public class VaultController {
         String plaintextOfData = null;
         try {
             Ciphertext ciphertext = Ciphertext.of(ciphertextOfData);
-            Plaintext plaintext = vaultOperations.opsForTransit().decrypt("sample-key", ciphertext);
+            Plaintext plaintext = vaultTransitOperations.decrypt("sample-key", ciphertext);
             plaintextOfData = plaintext.asString();
             log.info("Finished decrypt");
         } catch (Exception e) {

@@ -1,17 +1,22 @@
 package com.example.demo;
 
-import org.junit.jupiter.api.Test;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.context.junit4.SpringRunner;
+
+import java.io.IOException;
 
 @ExtendWith(SpringExtension.class)
-@SpringBootTest
 public class MySpringBootApplicationTests {
-
+ ObjectMapper objectMapper = new ObjectMapper();
 	@Test
-	public void contextLoads() {
+	public void contextLoads(@Value("${classpath:appDTO.json}") Resource dto) throws IOException {
+		AppDTO appDTO = objectMapper.readValue(dto.getContentAsByteArray(), AppDTO.class);
+		Assertions.assertEquals("ashish", appDTO.getFName());
+		Assertions.assertTrue(true);
 	}
 
 }
