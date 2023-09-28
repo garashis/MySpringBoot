@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.*;
 import org.springframework.data.repository.query.Param;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.*;
@@ -95,9 +96,11 @@ public class AppController {
     @Autowired
     MyTableRepository repository;
     @GetMapping
-    public List<MyTestTable> getData(){
+    @Cacheable(value = "users")
+    public List<MyTestTable> getData(@RequestParam int version){
         //List<MyTestTable> data = myRepository.findAll();
-        List<MyTestTable> data = repository.findResult(1);
+        System.out.println(">>>>>>>>>>>> caching");
+        List<MyTestTable> data = repository.findResult(version);
         return data;
     }
 

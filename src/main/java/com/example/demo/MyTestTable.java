@@ -2,9 +2,12 @@ package com.example.demo;
 
 import jakarta.persistence.*;
 import org.springframework.data.annotation.AccessType;
+
+import java.io.Serializable;
+
 @Entity
 @Table(name = "mytesttable")
-public class MyTestTable {
+public class MyTestTable implements Serializable {
 
     @Id
     @Column(name="ctid")
