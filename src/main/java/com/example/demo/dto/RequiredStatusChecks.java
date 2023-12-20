@@ -1,23 +1,19 @@
 
-package com.example;
+package com.example.demo.dto;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "enforcement_level",
     "contexts"
 })
-@Generated("jsonschema2pojo")
+
 public class RequiredStatusChecks {
 
     @JsonProperty("enforcement_level")
@@ -25,7 +21,7 @@ public class RequiredStatusChecks {
     @JsonProperty("contexts")
     private List<String> contexts;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+    
 
     @JsonProperty("enforcement_level")
     public String getEnforcementLevel() {
@@ -45,16 +41,6 @@ public class RequiredStatusChecks {
     @JsonProperty("contexts")
     public void setContexts(List<String> contexts) {
         this.contexts = contexts;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

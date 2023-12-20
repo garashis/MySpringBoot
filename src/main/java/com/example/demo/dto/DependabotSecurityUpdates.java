@@ -1,12 +1,6 @@
 
-package com.example;
+package com.example.demo.dto;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -15,71 +9,66 @@ import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 /**
  * Enable or disable Dependabot security updates for the repository.
- * 
+ *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "status"
 })
-@Generated("jsonschema2pojo")
 public class DependabotSecurityUpdates {
 
     /**
      * The enablement status of Dependabot security updates for the repository.
-     * 
+     *
      */
     @JsonProperty("status")
     @JsonPropertyDescription("The enablement status of Dependabot security updates for the repository.")
-    private DependabotSecurityUpdates.Status status;
+    private Status status;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+
 
     /**
      * The enablement status of Dependabot security updates for the repository.
-     * 
+     *
      */
     @JsonProperty("status")
-    public DependabotSecurityUpdates.Status getStatus() {
+    public Status getStatus() {
         return status;
     }
 
     /**
      * The enablement status of Dependabot security updates for the repository.
-     * 
+     *
      */
     @JsonProperty("status")
-    public void setStatus(DependabotSecurityUpdates.Status status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
 
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+
+
 
 
     /**
      * The enablement status of Dependabot security updates for the repository.
-     * 
+     *
      */
-    @Generated("jsonschema2pojo")
     public enum Status {
 
         ENABLED("enabled"),
         DISABLED("disabled");
         private final String value;
-        private final static Map<String, DependabotSecurityUpdates.Status> CONSTANTS = new HashMap<String, DependabotSecurityUpdates.Status>();
+        private final static Map<String, Status> CONSTANTS = new HashMap<String, Status>();
 
         static {
-            for (DependabotSecurityUpdates.Status c: values()) {
+            for (Status c: values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -99,8 +88,8 @@ public class DependabotSecurityUpdates {
         }
 
         @JsonCreator
-        public static DependabotSecurityUpdates.Status fromValue(String value) {
-            DependabotSecurityUpdates.Status constant = CONSTANTS.get(value);
+        public static Status fromValue(String value) {
+            Status constant = CONSTANTS.get(value);
             if (constant == null) {
                 throw new IllegalArgumentException(value);
             } else {

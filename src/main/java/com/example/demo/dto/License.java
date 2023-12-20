@@ -1,11 +1,6 @@
 
-package com.example;
+package com.example.demo.dto;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -19,7 +14,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "url",
     "node_id"
 })
-@Generated("jsonschema2pojo")
 public class License {
 
     @JsonProperty("key")
@@ -33,7 +27,7 @@ public class License {
     @JsonProperty("node_id")
     private String nodeId;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+    
 
     @JsonProperty("key")
     public String getKey() {
@@ -85,14 +79,8 @@ public class License {
         this.nodeId = nodeId;
     }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
+    
 
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+    
 
 }

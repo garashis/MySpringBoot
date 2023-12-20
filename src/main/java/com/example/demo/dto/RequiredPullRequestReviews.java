@@ -1,39 +1,18 @@
 
-package com.example;
+package com.example.demo.dto;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "url",
-    "dismiss_stale_reviews",
-    "require_code_owner_reviews",
-    "require_last_push_approval",
-    "required_approving_review_count"
-})
-@Generated("jsonschema2pojo")
 public class RequiredPullRequestReviews {
 
-    @JsonProperty("url")
     private String url;
-    @JsonProperty("dismiss_stale_reviews")
-    private Boolean dismissStaleReviews;
-    @JsonProperty("require_code_owner_reviews")
-    private Boolean requireCodeOwnerReviews;
-    @JsonProperty("require_last_push_approval")
-    private Boolean requireLastPushApproval;
-    @JsonProperty("required_approving_review_count")
+    private boolean dismissStaleReviews;
+    private boolean requireCodeOwnerReviews;
+    private boolean requireLastPushApproval;
     private Integer requiredApprovingReviewCount;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+
 
     @JsonProperty("url")
     public String getUrl() {
@@ -46,32 +25,32 @@ public class RequiredPullRequestReviews {
     }
 
     @JsonProperty("dismiss_stale_reviews")
-    public Boolean getDismissStaleReviews() {
+    public boolean getDismissStaleReviews() {
         return dismissStaleReviews;
     }
 
     @JsonProperty("dismiss_stale_reviews")
-    public void setDismissStaleReviews(Boolean dismissStaleReviews) {
+    public void setDismissStaleReviews(boolean dismissStaleReviews) {
         this.dismissStaleReviews = dismissStaleReviews;
     }
 
     @JsonProperty("require_code_owner_reviews")
-    public Boolean getRequireCodeOwnerReviews() {
+    public boolean getRequireCodeOwnerReviews() {
         return requireCodeOwnerReviews;
     }
 
     @JsonProperty("require_code_owner_reviews")
-    public void setRequireCodeOwnerReviews(Boolean requireCodeOwnerReviews) {
+    public void setRequireCodeOwnerReviews(boolean requireCodeOwnerReviews) {
         this.requireCodeOwnerReviews = requireCodeOwnerReviews;
     }
 
     @JsonProperty("require_last_push_approval")
-    public Boolean getRequireLastPushApproval() {
+    public boolean getRequireLastPushApproval() {
         return requireLastPushApproval;
     }
 
     @JsonProperty("require_last_push_approval")
-    public void setRequireLastPushApproval(Boolean requireLastPushApproval) {
+    public void setRequireLastPushApproval(boolean requireLastPushApproval) {
         this.requireLastPushApproval = requireLastPushApproval;
     }
 
@@ -84,15 +63,4 @@ public class RequiredPullRequestReviews {
     public void setRequiredApprovingReviewCount(Integer requiredApprovingReviewCount) {
         this.requiredApprovingReviewCount = requiredApprovingReviewCount;
     }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
 }

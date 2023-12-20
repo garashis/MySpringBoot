@@ -1,8 +1,6 @@
 
 package com.example.demo.dto;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -11,16 +9,14 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.net.URI;
 import java.util.Date;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 
 /**
  * Minimal Repository
  * <p>
  * Minimal Repository
- * 
+ *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -112,33 +108,33 @@ import java.util.Map;
     "web_commit_signoff_required",
     "security_and_analysis"
 })
-public class Repository {
+public class GitRepository {
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("id")
     private Integer id;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("node_id")
     private String nodeId;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("name")
     private String name;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("full_name")
     private String fullName;
@@ -147,148 +143,148 @@ public class Repository {
      * <p>
      * A GitHub user.
      * (Required)
-     * 
+     *
      */
     @JsonProperty("owner")
     @JsonPropertyDescription("A GitHub user.")
     private Owner owner;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("private")
     private Boolean _private;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("html_url")
     private URI htmlUrl;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("description")
     private String description;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("fork")
     private Boolean fork;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("url")
     private URI url;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("archive_url")
     private String archiveUrl;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("assignees_url")
     private String assigneesUrl;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("blobs_url")
     private String blobsUrl;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("branches_url")
     private String branchesUrl;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("collaborators_url")
     private String collaboratorsUrl;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("comments_url")
     private String commentsUrl;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("commits_url")
     private String commitsUrl;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("compare_url")
     private String compareUrl;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("contents_url")
     private String contentsUrl;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("contributors_url")
     private URI contributorsUrl;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("deployments_url")
     private URI deploymentsUrl;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("downloads_url")
     private URI downloadsUrl;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("events_url")
     private URI eventsUrl;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("forks_url")
     private URI forksUrl;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("git_commits_url")
     private String gitCommitsUrl;
@@ -534,7 +530,7 @@ public class Repository {
     @JsonProperty("security_and_analysis")
     private SecurityAndAnalysis securityAndAnalysis;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+    
 
     /**
      * 
@@ -1890,14 +1886,8 @@ public class Repository {
         this.securityAndAnalysis = securityAndAnalysis;
     }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
+    
 
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+    
 
 }

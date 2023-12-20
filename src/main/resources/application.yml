@@ -1,0 +1,15 @@
+rules:
+  branches:
+    azure-spring-boot-sso-example:
+      requireReviewCount: 3
+      dismissStaleReviews: true
+      requireCodeOwnerReview: true
+      requireBranchUpToDate: true
+      includeAdmin: true
+      requireLinearHistory: true
+      allowProtectedBranchDelete: true
+      requiredStatusChecks: ["Trufflehog", "continuous-integration"]
+      patterns:
+        - '^master$'
+        - '^main$'
+        - '^develop$'

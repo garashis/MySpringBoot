@@ -1,23 +1,19 @@
 
-package com.example;
+package com.example.demo.dto;
 
-import java.net.URI;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+import java.net.URI;
 
 
 /**
  * Code Of Conduct
  * <p>
  * Code Of Conduct
- * 
+ *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -27,46 +23,45 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "body",
     "html_url"
 })
-@Generated("jsonschema2pojo")
 public class CodeOfConduct {
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("key")
     private String key;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("name")
     private String name;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("url")
     private URI url;
     @JsonProperty("body")
     private String body;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("html_url")
     private URI htmlUrl;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("key")
     public String getKey() {
@@ -74,9 +69,9 @@ public class CodeOfConduct {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("key")
     public void setKey(String key) {
@@ -84,9 +79,9 @@ public class CodeOfConduct {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("name")
     public String getName() {
@@ -94,9 +89,9 @@ public class CodeOfConduct {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("name")
     public void setName(String name) {
@@ -104,9 +99,9 @@ public class CodeOfConduct {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("url")
     public URI getUrl() {
@@ -114,9 +109,9 @@ public class CodeOfConduct {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("url")
     public void setUrl(URI url) {
@@ -134,9 +129,9 @@ public class CodeOfConduct {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("html_url")
     public URI getHtmlUrl() {
@@ -144,23 +139,17 @@ public class CodeOfConduct {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("html_url")
     public void setHtmlUrl(URI htmlUrl) {
         this.htmlUrl = htmlUrl;
     }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
 
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+
+
 
 }
