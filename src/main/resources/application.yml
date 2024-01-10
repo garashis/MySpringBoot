@@ -23,3 +23,18 @@ spring:
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  data:
+    mongodb:
+      database: sample_analytics
+      uri: mongodb+srv://test:wsEZHPL6ap0cQawV@cluster0.lltjl.mongodb.net/sample_analytics
+  cache:
+    type: redis
+    host: localhost
+    port: 6379
+    redis:
+      time-to-live: 60000
+
+logging:
+  level:
+    org:
+      springframework: trace

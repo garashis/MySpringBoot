@@ -9,3 +9,7 @@ DEL "user::1"
 * kafka-topics.sh --list --bootstrap-server localhost:9092
 * kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
 * kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
+
+* start redis server: redis-server
+* start redis cli: redis-cli
+* Query keys in the server: keys *
