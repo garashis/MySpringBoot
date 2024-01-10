@@ -13,3 +13,4 @@ DEL "user::1"
 * start redis server: redis-server
 * start redis cli: redis-cli
 * Query keys in the server: keys *
+* Get details of a key: get user::garashis
