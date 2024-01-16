@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public interface CustomerRepository extends CrudRepository<Customer, Integer> {
 
-    @Cacheable(value = "user", key = "#username", sync = true)
+    @Cacheable(value = "user", key = "{#username}", sync = true)
     Optional<Customer> findByUsername(String username);
 
     @CachePut(value = "user", key = "#customer.username")

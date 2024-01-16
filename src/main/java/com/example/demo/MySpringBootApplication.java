@@ -13,7 +13,6 @@ import org.springframework.data.redis.serializer.RedisSerializationContext;
 import java.time.Duration;
 
 @SpringBootApplication
-@EnableCaching
 @EnableConfigurationProperties(RulesConfig.class)
 public class MySpringBootApplication {
 

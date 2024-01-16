@@ -2,9 +2,12 @@ package com.example.demo;
 
 import com.example.demo.dto.Customer;
 import com.example.demo.repository.CustomerRepository;
+import com.github.benmanes.caffeine.cache.Cache;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.caffeine.CaffeineCache;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
 import java.util.Optional;
 
 import static org.springframework.http.HttpStatus.CREATED;
@@ -62,6 +66,21 @@ public class MongoController {
             return new ResponseEntity<>(NO_CONTENT);
         } catch (Exception e) {
             return new ResponseEntity<>(INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    private final CacheManager cacheManager;
+
+    @GetMapping(value = "/inspectCache")
+    public void inspectCache(String cacheName) {
+
+        CaffeineCache caffeineCache = (CaffeineCache) cacheManager.getCache(cacheName);
+        Cache<Object, Object> nativeCache = caffeineCache.getNativeCache();
+
+        for (Map.Entry<Object, Object> entry : nativeCache.asMap().entrySet()) {
+
+            System.out.println("Key = " + entry.getKey());
+            System.out.println("Value = " + entry.getValue());
         }
     }
 }

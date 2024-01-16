@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import lombok.AllArgsConstructor;
+import org.springframework.cache.CacheManager;
 import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.util.concurrent.ListenableFuture;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class KafkaController {
     public static final String TOPIC_NAME = "myTest";
+
 
     private final KafkaProducer kafkaProducer;
     @GetMapping("/publish")
